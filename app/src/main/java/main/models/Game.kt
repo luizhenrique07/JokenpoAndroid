@@ -1,7 +1,7 @@
 package main.models
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.luiz.jokenpo.R
 
 class Game {
     val userOption = MutableLiveData<RockPaperScissors>()
@@ -14,10 +14,11 @@ class Game {
         computerOption.value = RockPaperScissors.UNKNOWN
     }
 
-    fun start(userOption: RockPaperScissors) {
+    fun makeMove(userOption: RockPaperScissors) {
         this.userOption.value = userOption
         setComputerOption()
         setResult()
+        calculatePoints()
     }
 
     private fun setComputerOption() {
@@ -26,7 +27,7 @@ class Game {
     }
 
 
-    fun setResult() {
+    private fun setResult() {
         if (isTie()) {
             result.value = Result.TIE
             return
@@ -51,8 +52,23 @@ class Game {
         }
     }
 
+    private fun calculatePoints() {
+        when (result.value) {
+            Result.WIN -> points += Result.WIN.point
+            Result.TIE -> points += Result.TIE.point
+        }
+    }
 
-    fun isTie(): Boolean {
+    private fun isTie(): Boolean {
         return computerOption.value == userOption.value
+    }
+
+    fun getRockPaperScissorsResource(option: RockPaperScissors): Int {
+        when (option) {
+            RockPaperScissors.SCISSORS -> return R.drawable.pixel_scissors
+            RockPaperScissors.ROCK -> return R.drawable.pixel_rock
+            RockPaperScissors.PAPER -> return R.drawable.pixel_paper
+        }
+        return R.drawable.logo
     }
 }

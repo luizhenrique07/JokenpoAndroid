@@ -7,40 +7,68 @@
         android:layout_height="match_parent"
         tools:context="main.gameOver.GameOverActivity">
 
+    <ImageView
+            android:layout_width="122dp"
+            android:layout_height="146dp" app:srcCompat="?attr/actionBarDivider"
+            android:id="@+id/playersChoiceIv2"
+            app:layout_constraintEnd_toStartOf="@+id/playersChoiceIv"
+            android:layout_marginEnd="52dp" app:layout_constraintStart_toStartOf="@+id/textView"
+            android:layout_marginTop="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintHorizontal_bias="0.0"/>
     <TextView
             android:text="@string/end_game"
             android:fontFamily="@font/pixel_font"
-            android:textColor="#A51807"
-            android:layout_width="338dp"
-            android:layout_height="95dp"
+            android:textColor="#9E1808"
+            android:layout_width="333dp"
+            android:layout_height="52dp"
             android:id="@+id/textView" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="72dp" app:layout_constraintTop_toTopOf="parent" android:textSize="24sp"
-            android:textAlignment="center"/>
+            android:layout_marginTop="72dp" app:layout_constraintTop_toTopOf="parent" android:textSize="28sp"
+            android:textAlignment="center" android:textStyle="bold"/>
+    <ImageView
+            android:layout_width="122dp"
+            android:layout_height="146dp" app:srcCompat="?attr/actionBarDivider"
+            android:id="@+id/playersChoiceIv"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/playersChoiceIv2"/>
+
+
     <TextView
             android:text="@string/your_points"
             android:fontFamily="@font/pixel_font"
-            android:layout_width="285dp"
-            android:layout_height="105dp"
-            android:id="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView" android:layout_marginTop="116dp"
-            app:layout_constraintHorizontal_bias="0.498" android:textAlignment="viewStart" android:textSize="24sp"/>
+            android:layout_width="301dp"
+            android:layout_height="39dp"
+            android:id="@+id/pointsTv"
+            android:textAlignment="center" android:textSize="24sp"
+            android:translationZ="1px"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/playersChoiceIv2" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/playersChoiceIv"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"/>
     <Button
             android:text="@string/exit"
-            android:layout_width="110dp"
-            android:layout_height="52dp"
-            android:id="@+id/exitEndGameBt" app:layout_constraintEnd_toEndOf="@+id/textView2"
+            android:layout_width="129dp"
+            android:layout_height="64dp"
+            android:id="@+id/exitEndGameBt"
             app:layout_constraintTop_toTopOf="@+id/restartEndGameBt" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2" android:layout_marginEnd="32dp"/>
     <Button
             android:text="@string/restart"
-            android:layout_width="110dp"
-            android:layout_height="52dp"
-            android:id="@+id/restartEndGameBt" app:layout_constraintStart_toStartOf="@+id/textView2"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/exitEndGameBt"
+            android:layout_width="129dp"
+            android:layout_height="64dp"
+            android:id="@+id/restartEndGameBt"
+            app:layout_constraintEnd_toStartOf="@+id/exitEndGameBt"
             android:layout_marginEnd="8dp" android:layout_marginBottom="72dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.962"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView2" android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias="0.32"/>
+    <ImageView
+            android:layout_width="347dp"
+            android:layout_height="128dp" app:srcCompat="@drawable/pixel_box"
+            android:id="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/pointsTv"
+            app:layout_constraintStart_toStartOf="@+id/pointsTv" app:layout_constraintHorizontal_bias="0.541"
+            android:layout_marginTop="68dp" app:layout_constraintTop_toBottomOf="@+id/playersChoiceIv2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

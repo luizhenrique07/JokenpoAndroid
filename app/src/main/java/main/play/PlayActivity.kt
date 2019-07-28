@@ -1,9 +1,8 @@
 package main.play
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.luiz.jokenpo.R
 import kotlinx.android.synthetic.main.activity_play.*
@@ -43,24 +42,32 @@ class PlayActivity : AppCompatActivity() {
         })
 
         rockIv.setOnClickListener {
-            game.start(RockPaperScissors.ROCK)
+            game.makeMove(RockPaperScissors.ROCK)
         }
 
         paperIv.setOnClickListener {
-            game.start(RockPaperScissors.PAPER)
+            game.makeMove(RockPaperScissors.PAPER)
         }
 
         scissorIv.setOnClickListener {
-            game.start(RockPaperScissors.SCISSORS)
+            game.makeMove(RockPaperScissors.SCISSORS)
         }
     }
 
-    fun goToGameOverScreen() {
-        startActivity(Intent(this, GameOverActivity::class.java))
+    private fun goToGameOverScreen() {
+        var intent = Intent(this, GameOverActivity::class.java)
+        sendDataToScreen(intent)
+        startActivity(intent)
         finish()
     }
 
-    fun getResultTextMessage(result: Result): String {
+    private fun sendDataToScreen(intent: Intent) {
+        intent.putExtra("gamePoints", game.points)
+        intent.putExtra("gameUserOption", userOption.id)
+        intent.putExtra("gameComputerOption", computerOption.id)
+    }
+
+    private fun getResultTextMessage(result: Result): String {
         when (result) {
             Result.WIN -> return "Venceu!"
             Result.TIE -> return "Empate!"
@@ -68,19 +75,10 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    fun setImageView(user: RockPaperScissors, computer: RockPaperScissors) {
+    private fun setImageView(user: RockPaperScissors, computer: RockPaperScissors) {
         if (user != RockPaperScissors.UNKNOWN && computer != RockPaperScissors.UNKNOWN) {
-            playersChoiceIv.setImageResource(getImageResource(user))
-            computersChoiceIv.setImageResource(getImageResource(computer))
+            playersChoiceIv.setImageResource(game.getRockPaperScissorsResource(user))
+            computersChoiceIv.setImageResource(game.getRockPaperScissorsResource(computer))
         }
-    }
-
-    fun getImageResource(option: RockPaperScissors): Int {
-        when (option) {
-            RockPaperScissors.SCISSORS -> return R.drawable.pixel_scissors
-            RockPaperScissors.ROCK -> return R.drawable.pixel_rock
-            RockPaperScissors.PAPER -> return R.drawable.pixel_paper
-        }
-        return R.drawable.logo
     }
 }
