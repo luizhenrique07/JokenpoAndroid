@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Jokenpo</string>
+    <string name="play">Jogar</string>
+    <string name="exit">Sair</string>
+    <string name="about">Sobre</string>
+    <string name="ranking">Ranking</string>
+    <string name="you_win">Você Venceu!</string>
+    <string name="choose_your_weapon">Escolha sua arma</string>
+    <string name="end_game">Fim de Jogo!</string>
+    <string name="your_points">Sua pontuação é:</string>
+    <string name="restart">Restart</string>
+</resources>
