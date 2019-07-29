@@ -11,16 +11,23 @@
     <TextView
             android:fontFamily="@font/pixel_font"
             android:layout_width="333dp"
-            android:layout_height="89dp" app:srcCompat="?attr/actionBarDivider"
-            android:id="@+id/resultTv" android:layout_marginTop="48dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:textAlignment="center" android:textSize="18sp" android:textColor="#7544CE"
+            android:layout_height="89dp"
+            app:srcCompat="?attr/actionBarDivider"
+            android:id="@+id/resultTv"
+            android:layout_marginTop="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textColor="@color/purpleColor"
             android:text="@string/choose_your_weapon"/>
     <ImageView
             android:layout_width="122dp"
             android:layout_height="146dp" app:srcCompat="?attr/actionBarDivider"
-            android:id="@+id/playersChoiceIv"
+            android:id="@+id/computerChoiceGameOverIv"
             android:layout_marginTop="96dp"
             app:layout_constraintTop_toBottomOf="@+id/resultTv" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="36dp"
@@ -30,16 +37,17 @@
             android:layout_width="122dp"
             android:layout_height="146dp" app:srcCompat="?attr/actionBarDivider"
             android:id="@+id/computersChoiceIv"
-            app:layout_constraintTop_toTopOf="@+id/playersChoiceIv" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="36dp" app:layout_constraintBottom_toBottomOf="@+id/playersChoiceIv"
+            app:layout_constraintTop_toTopOf="@+id/computerChoiceGameOverIv" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="36dp" app:layout_constraintBottom_toBottomOf="@+id/computerChoiceGameOverIv"
             app:layout_constraintVertical_bias="0.0"/>
     <ImageView
             android:layout_width="103dp"
             android:layout_height="97dp" app:srcCompat="@drawable/pixel_rock"
             android:id="@+id/rockIv"
-            app:layout_constraintStart_toStartOf="@+id/playersChoiceIv" android:layout_marginBottom="116dp"
+            app:layout_constraintStart_toStartOf="@+id/computerChoiceGameOverIv" android:layout_marginBottom="116dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/playersChoiceIv" app:layout_constraintVertical_bias="0.993"/>
+            app:layout_constraintTop_toBottomOf="@+id/computerChoiceGameOverIv"
+            app:layout_constraintVertical_bias="0.993"/>
     <ImageView
             android:layout_width="103dp"
             android:layout_height="97dp" app:srcCompat="@drawable/pixel_paper"
@@ -55,6 +63,4 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/paperIv"
             app:layout_constraintVertical_bias="0.0"/>
-
-    app:layout_constraintHorizontal_bias="0.24"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

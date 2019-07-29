@@ -1,8 +1,8 @@
 package main.menu
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.luiz.jokenpo.R
 import kotlinx.android.synthetic.main.activity_menu.*
 import main.play.PlayActivity

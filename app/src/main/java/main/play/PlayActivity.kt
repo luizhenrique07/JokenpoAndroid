@@ -55,7 +55,7 @@ class PlayActivity : AppCompatActivity() {
     }
 
     private fun goToGameOverScreen() {
-        var intent = Intent(this, GameOverActivity::class.java)
+        val intent = Intent(this, GameOverActivity::class.java)
         sendDataToScreen(intent)
         startActivity(intent)
         finish()
@@ -77,7 +77,7 @@ class PlayActivity : AppCompatActivity() {
 
     private fun setImageView(user: RockPaperScissors, computer: RockPaperScissors) {
         if (user != RockPaperScissors.UNKNOWN && computer != RockPaperScissors.UNKNOWN) {
-            playersChoiceIv.setImageResource(game.getRockPaperScissorsResource(user))
+            computerChoiceGameOverIv.setImageResource(game.getRockPaperScissorsResource(user))
             computersChoiceIv.setImageResource(game.getRockPaperScissorsResource(computer))
         }
     }
