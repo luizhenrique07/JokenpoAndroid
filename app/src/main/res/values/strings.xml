@@ -4,7 +4,8 @@
     <string name="exit">Sair</string>
     <string name="about">Sobre</string>
     <string name="ranking">Ranking</string>
-    <string name="you_win">Você Venceu!</string>
+    <string name="you_win">Você Venceu! +2 Pontos</string>
+    <string name="its_tied">Empatou! +1 Ponto</string>
     <string name="choose_your_weapon">Escolha sua arma</string>
     <string name="end_game">Fim de Jogo!</string>
     <string name="your_points">Sua pontuação é: %1$d</string>

@@ -69,8 +69,8 @@ class PlayActivity : AppCompatActivity() {
 
     private fun getResultTextMessage(result: Result): String {
         when (result) {
-            Result.WIN -> return "Venceu!"
-            Result.TIE -> return "Empate!"
+            Result.WIN -> return resources.getString(R.string.you_win)
+            Result.TIE -> return resources.getString(R.string.its_tied)
             else -> return ""
         }
     }
